@@ -1,0 +1,40 @@
+def get_last_5_videos(channel_id)
+  @doc = Nokogiri::HTML(URI.open("#{channel_id}.html"))
+
+  #reg = /watch\?v=+[0-9a-z]{11}/
+
+  #title = doc.at_xpath(reg)
+  puts(@doc.class)
+  array = []
+  all_url_from_header = @doc.xpath('//*[starts-with(@href, "https")]')
+
+  all_url_from_header.each do |url|
+    puts url.text
+  end
+  #watch\\\?v=+[0-9a-z]{11}
+end
+
+
+
+  inline_script.each do |script|
+    if (i==22)
+      liste<<script.text
+    end
+    i=i+1
+  end
+
+  [
+    {
+      "name": "SIA",
+      "url": "https://www.youtube.com/c/sia/videos",
+      "id": "sia/videos",
+      "videos": []
+    },
+    {
+      "name": "Alan Walker",
+      "url": "https://www.youtube.com/c/Alanwalkermusic/videos",
+      "id": "Alanwalkermusic/videos",
+      "video":[]
+    }
+
+  ]
